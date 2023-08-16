@@ -1,21 +1,21 @@
-import { FastifyInstance } from "fastify";
-import * as controllers from "../controllers";
-import { loginSchema, signupSchema } from "../schema";
+import { FastifyInstance } from 'fastify';
+import * as controllers from '../controllers';
+import { loginSchema, signupSchema } from '../schema';
 
 export async function userRouter(fastify: FastifyInstance) {
-  fastify.decorateRequest("authUser", "");
+  fastify.decorateRequest('authUser', '');
 
   fastify.route({
-    method: "POST",
-    url: "/login",
+    method: 'POST',
+    url: '/login',
     schema: loginSchema,
-    handler: controllers.login as any,
+    handler: controllers.login as never,
   });
 
   fastify.route({
-    method: "POST",
-    url: "/signup",
+    method: 'POST',
+    url: '/signup',
     schema: signupSchema,
-    handler: controllers.register as any,
+    handler: controllers.register as never,
   });
 }
