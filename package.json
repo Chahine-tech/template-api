@@ -1,7 +1,7 @@
 {
   "name": "fastiy-serv",
   "version": "1.0.0",
-  "description": "",
+  "description": "Basic api with fastify and prisma",
   "main": "index.js",
   "scripts": {
     "start:db": "docker compose -f docker-compose.yml up -d",
