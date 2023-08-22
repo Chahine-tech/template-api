@@ -36,7 +36,13 @@ export const getPosts = async (
   try {
     const posts = await prisma.post.findMany({
       include: {
-        createdBy: true,
+        createdBy: {
+          select: {
+            email: true,
+            firstName: true,
+            lastName: true,
+          },
+        },
       },
     });
     reply.status(STANDARD.SUCCESS).send({ data: posts });
