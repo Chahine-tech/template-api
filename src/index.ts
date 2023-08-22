@@ -1,5 +1,7 @@
 import app from './app';
+import { healthCheck } from './helpers/utils';
 import { userRouter } from './routes';
+import { postRouter } from './routes/post.router';
 
 const start = async () => {
   app.get('/', async (request, reply) => {
@@ -7,6 +9,15 @@ const start = async () => {
   });
 
   app.register(userRouter, { prefix: '/api/user' });
+  app.register(postRouter, { prefix: '/api/post' });
+  app.get('/health-check', async (request, reply) => {
+    try {
+      await healthCheck();
+      reply.status(200).send();
+    } catch (e) {
+      reply.status(500).send();
+    }
+  });
   app.listen({ port: 3000, host: '127.0.0.1' }, (err, address) => {
     if (err) {
       console.error(err);

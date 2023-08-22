@@ -10,3 +10,15 @@ export const hashPassword = (password: string) => {
 export const comparePassword = async (password: string, hash: string) => {
   return bcrypt.compare(password, hash);
 };
+
+export const healthCheck = (): Promise<void> => {
+  return new Promise((resolve, reject) => {
+    prisma.$queryRaw`SELECT 1`
+      .then(() => {
+        resolve();
+      })
+      .catch((e) => {
+        reject(e);
+      });
+  });
+};
