@@ -6,7 +6,8 @@
   "scripts": {
     "start:db": "docker compose -f docker-compose.yml up -d",
     "dev": "ts-node src/index.ts",
-    "start": "tsup src/index.ts --clean && node dist/index.js",
+    "start": "node dist/index.js",
+    "build": "tsc",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix"
   },
@@ -20,8 +21,7 @@
     "bcryptjs": "^2.4.3",
     "fastify": "^4.21.0",
     "fluent-json-schema": "^4.1.1",
-    "jsonwebtoken": "^9.0.1",
-    "tsup": "^7.2.0"
+    "jsonwebtoken": "^9.0.1"
   },
   "devDependencies": {
     "@types/bcryptjs": "^2.4.2",

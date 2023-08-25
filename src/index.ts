@@ -1,7 +1,6 @@
 import app from './app';
 import { healthCheck } from './helpers/utils';
-import { userRouter } from './routes';
-import { postRouter } from './routes/post.router';
+import { postRouter, userRouter } from './routes';
 
 const start = async () => {
   app.get('/', async (request, reply) => {
