@@ -17,12 +17,12 @@ const start = async () => {
       reply.status(500).send();
     }
   });
-  app.listen({ port: 8080 }, (err) => {
+  app.listen({ port: 8080, host: '127.0.0.1' }, (err, address) => {
     if (err) {
       console.error(err);
       process.exit(1);
     }
-    console.log(`Server ready at http://localhost:8080 🚀`);
+    console.log(`Server listening at ${address} 🚀`);
   });
 };
 
