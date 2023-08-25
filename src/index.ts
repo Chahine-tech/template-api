@@ -17,7 +17,7 @@ const start = async () => {
       reply.status(500).send();
     }
   });
-  app.listen({ port: 3000, host: '127.0.0.1' }, (err, address) => {
+  app.listen({ port: 8080, host: '127.0.0.1' }, (err, address) => {
     if (err) {
       console.error(err);
       process.exit(1);
