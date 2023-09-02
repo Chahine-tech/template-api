@@ -18,6 +18,7 @@
     "@fastify/autoload": "^5.7.1",
     "@fastify/cors": "^8.3.0",
     "@prisma/client": "^5.1.1",
+    "@vercel/node": "^3.0.3",
     "bcryptjs": "^2.4.3",
     "fastify": "^4.21.0",
     "fluent-json-schema": "^4.1.1",
